@@ -1,4 +1,4 @@
-##Setting up code-deploy agent on ec2 machine
+# Setting up code-deploy agent on ec2 machine 
 
 Install ruby
 ```bash
@@ -25,5 +25,5 @@ Verify installation
 sudo service codedeploy-agent status
 ```
 
-#Attach ec2-codedeployrole to your instance
+## Attach ec2-codedeployrole to your instance
 The code must container the permission of ec2, s3 and CodeDeploy access and restart your codedeploy-agent

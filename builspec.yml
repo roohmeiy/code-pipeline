@@ -1,0 +1,21 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - echo INSTALLING NGINX
+      - sudo apt update
+      - sudo apt install nginx -y
+  build:
+    commands:
+      - echo "building"
+      - cp index.html /var/www/html/           # Copy to the NGINX directory
+      - cp /var/www/html/index.html .          # Also copy it to the current directory for artifacts
+  post_build:
+    commands:
+      - echo CONFIGURING NGINX
+artifacts:
+  files:
+    - index.html     
+    - appspec.yml
+    - scripts/**/*
+  discard-paths: no
